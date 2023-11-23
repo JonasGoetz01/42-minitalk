@@ -1,0 +1,1 @@
+Minitalk project for 42 school
