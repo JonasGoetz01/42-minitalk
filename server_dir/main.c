@@ -6,13 +6,13 @@
 /*   By: jgotz <jgotz@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 15:02:17 by jgotz             #+#    #+#             */
-/*   Updated: 2023/11/23 16:58:47 by jgotz            ###   ########.fr       */
+/*   Updated: 2023/11/24 11:45:13 by jgotz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
 
-void	ft_btoa(int sig)
+void	decode_char(int sig)
 {
 	static int	bit;
 	static int	i;
@@ -35,15 +35,15 @@ int	main(int argc, char **argv)
 	(void)argv;
 	if (argc != 1)
 	{
-		ft_printf("Error\n");
-		return (1);
+		ft_printf("Wrong number of arguments\n");
+		return (0);
 	}
 	pid = getpid();
 	ft_printf("%d\n", pid);
 	while (argc == 1)
 	{
-		signal(SIGUSR1, ft_btoa);
-		signal(SIGUSR2, ft_btoa);
+		signal(SIGUSR1, decode_char);
+		signal(SIGUSR2, decode_char);
 		pause();
 	}
 	return (0);
