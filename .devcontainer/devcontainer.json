@@ -3,7 +3,7 @@
 {
 	"name": "C-Codespace",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"dockerFile": "./Dockerfile",
+	"image": "jonasgoetz01/codespaces-c:latest",
 
 	"mounts": [
 		"source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
